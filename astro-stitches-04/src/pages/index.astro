@@ -1,0 +1,38 @@
+---
+import TomatoBox from '../components/TomatoBox.tsx';
+import * as Stitches from "../stitches.config.ts"; // Don't omit .ts extension
+
+const globalStyles = Stitches.globalCss({
+  body: { background: "cornflowerblue !important" },
+});
+
+globalStyles(); // This works!
+
+let title = 'My Astro Site';
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title}</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/style/global.css">
+	<link rel="stylesheet" href="/style/home.css">
+	<Stitches.StyleSheet />
+</head>
+<body>
+	<main>
+		<header>
+			<div>
+				<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+			</div>
+		</header>
+		<!-- Works on dev, still does not work on build (mismatched class name from the getCssText styles). -->
+		<TomatoBox>
+			hello Stitches
+		</TomatoBox>
+		<!--  -->
+	 </main>
+</body>
+</html>
