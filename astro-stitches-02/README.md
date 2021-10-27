@@ -9,6 +9,8 @@ yarn build
 yarn preview
 ```
 
+https://codesandbox.io/s/astro-stitches-02-sg639
+
 ## Objective
 
 - Use a React component styled with Stitches in Astro _without client-side hydration_
